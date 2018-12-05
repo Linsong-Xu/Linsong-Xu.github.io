@@ -4,111 +4,56 @@ type: page
 title: About me
 ---
 
-# 配置服务器cuda+cudnn+tensorflow-gpu
+## <center>许林松</center>
+<center>(+86)18392077175</center>
+<center>Email: xulinsong.ok@163.com</center> 
+<center>Github: github.com/Linsong-Xu</center>
+<center>Blog: https://linsong-xu.github.io</center>
+<center>陕西省西安市碑林区咸宁西路28号西安交通大学</center>
+<br/>
 
-------
-## 问题
-权限不足，无法将`cudnn`和`cuda`合并。
+### 教育经历
+- 2014.9 - 2018.6 西安交通大学 软件工程 学士
+- 2018.9 - 2021-6 西安交通大学 软件工程 硕士
 
-> 确定需要安装的框架（以`tensorflow`为例）及其版本（以tensorflow_gpu-1.10.1-cp36-cp36mmanylinux1_
-x86_64 为例），框架版本与`cuda` 和`cudnn`对应关系见[此](https://www.tensorflow.org/install/source#tested_source_configurations)
+### 相关技能
+- 前端：`HTML`,`CSS`,`Java Script`,`React`
+- 后端：`Java`,`Spring MVC`
+- 其他：`Python`,`C++`,`Java`,`Bash shell`,`Matlab`,`Tensorflow`,`Keras`
 
-> 这篇教程使用下面链接里的[cuda+cudnn+tensorflow-gpu版本](https://pan.baidu.com/s/1yDKYuT6OZ0k59qn4IhqrbA),提取码为：km3n
+### 获奖经历
+- 2015年 优秀学生
+- 2015年 西安交通大学国家励志奖学金(专业排名6/80)
+- 2016年 优秀学生
+- 2016年 西安交通大学国家奖学金(专业排名1/80)
+- 2017年 优秀学生
+- 2017年 西安交通大学陆诗娣一等奖学金(保研专业排名1/70)
+- 2018年 优秀毕业生
 
-------
+### 科研项目经历
+- 2017.02 – 2017.06 手写数字识别 国立台湾大学资讯工程系
 
-## 解决方法
-
-### 1. 以我的服务器为例：一开始`$HOME`目录下只有以下几个文件：
-
-> Anaconda3-5.0.0-Linux-x86_64.sh
-
-> cuda_9.0.176_384.81_linux-run
-
-> cudnn-9.0-linux-x64-v7.tgz
-
-> pip install tensorflow_gpu-1.10.1-cp36-cp36m-manylinux1_x86_64.whl
-
-### 2. 创建cuda目录并安装cuda
-创建自己的`cuda`目录，`cuda-9.0`(不要命名为cuda，因为后面cudnn解压后会有一个cuda重名文件)
-```
-mkdir cuda-9.0
-```
-更改文件权限
-```
-chmod +x cuda_9.0.176_384.81_linux-run
-```
-安装到自己的`cuda-9.0`目录下
-```
-./cuda _9.0.176_384.81_linux-run
-```
-这一步安装时会遇到以下几个问题：
-> Do you accept the previously read EULA? 
-**`accept`**
-
-> Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?
-**`n`**
-
-> Install the CUDA 9.0 Toolkit
-**`y`**
-
-> Enter Toolkit Location
-**`/home/[your_username]/cuda-9.0`**
-
-> Do you want to install a symbolic link at /usr/local/cuda
-**`n`**
-
-> Install the CUDA 9.0 Samples?
-**`n`**
-
-### 3. 解压`cudnn`文件
-```
-tar -xvf cudnn-9.0-linux-x64-v7.tgz
-```
-### 4. 拷贝`cudnn`的文件到`cuda-9.0`的目录下并更改权限
-```
-cp cuda/include/cudnn.h cuda-9.0/include/
-```
-```
-cp cuda/lib64/libcudnn* cuda-9.0/lib64
-```
-```
-chmod a+r cuda-9.0/include/cudnn.h cuda-9.0/lib64/libcudnn*
-```
+> 分别使用KNN，决策树，SVM，多层感知器，卷积神经网络等方法对已标记的样本进行特征提取和特征选择，然后在特征空间内训练神经 网络模型，并测试准确性。
 
 
-### 5. 给自己的当前用户配置环境变量
-编辑`.bashrc`
-```
-vim .bashrc
-```
-添加环境变量
-```
-export PATH=$HOME/cuda-9.0/bin:$PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/cuda-9.0/lib64/
-```
-使更改的环境变量生效
-```
-source .bashrc
-```
+- 2017.02 – 2017.06 AlexNet的实现与表情预测 国立台湾大学资讯工程系 
 
-### 6. 安装tensorflow-gpu
+> 使用Tensorflow实现AlexNet经典卷积神经网络，并通过训练自己的数据得到最佳的网络模型，对测试集的样本进行表情预测分类，并测试准确性。
 
-```
-pip install tensorflow_gpu-1.10.1-cp36-cp36m-manylinux1_x86_64.whl
-```
-### 7. 测试
+- 2017.09 – 2017.10 懂球帝 APP 用户分析和12306票务查询 西安交通大学软件学院
 
-``` python
-import tensorflow as tf
- 
-with tf.device('/cpu:0'):
-    a = tf.constant([1.0,2.0,3.0],shape=[3],name='a')
-    b = tf.constant([1.0,2.0,3.0],shape=[3],name='b')
-with tf.device('/gpu:1'):
-    c = a+b
-sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True,log_device_placement=True))
-sess.run(tf.global_variables_initializer())
-print(sess.run(c))
-```
+> 使用Charles软件对懂球帝App的API进行抓包，然后使用 Python 语言对懂球帝 App 的数据 进行爬虫，对用户数据进行分析，并进行数据可视化。
 
+> 使用浏览器自带的开发者工具对12306网站的api进行抓包分析，然后使用Python语言进行爬 虫得到JSON数据进行分析处理，实现火车票的查询功能。
+
+- 2017.10 - 2018.01 受限玻尔兹曼机 西安交通大学软件学院 
+
+> 使用Python对受限玻尔兹曼机的实现，并使用MNIST数据集进行训练与测试，最后与使用传统主成分分析方法得到的结果做比较。
+
+- 2018.02 - 2018.06 《图像检索中基于热扩散原理的深度特征选择方法研究》 毕业论文 
+
+> 使用 VGGNet 对图像进行特征提取，然后使用热扩散原理计算种子点和背景点对于其他区域点的影响，对提取到的深度特征进行筛选，得到最终的全局特征向量进行检索。
+
+- 2018.06 - 2018.10 《联合加权聚合深度卷积特征的图像检索方法》 交大学报 
+
+> 针对图像特征提取不充分影响图像检索精度的问题，提出基于联合加权聚合深度卷积特征的图像检索方法。通过设计空间权重矩阵、方差最大化原则和通道权重矩阵用于图像检索。
