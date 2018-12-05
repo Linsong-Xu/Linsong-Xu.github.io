@@ -17,9 +17,6 @@ tags: [Configuration]
 ## 问题
 权限不足，无法将`cudnn`和`cuda`合并。
 
-
-### 
-
 > 确定需要安装的框架（以`tensorflow`为例）及其版本（以tensorflow_gpu-1.10.1-cp36-cp36mmanylinux1_
 x86_64 为例），框架版本与`cuda` 和`cudnn`对应关系见[此](https://www.tensorflow.org/install/source#tested_source_configurations)
 
