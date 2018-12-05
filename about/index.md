@@ -2,6 +2,9 @@
 layout: page
 type: page
 title: About me
+date: 2018-12-01 00:00:00
+categories: CV
+tags: [About]
 ---
 
 ## <center>许林松</center>
