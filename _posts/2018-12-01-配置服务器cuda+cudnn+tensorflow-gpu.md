@@ -34,7 +34,7 @@ x86_64 为例），框架版本与`cuda` 和`cudnn`对应关系见[此](https://
 
 > cudnn-9.0-linux-x64-v7.tgz
 
-> pip install tensorflow_gpu-1.10.1-cp36-cp36m-manylinux1_x86_64.whl
+> tensorflow_gpu-1.10.1-cp36-cp36m-manylinux1_x86_64.whl
 
 ### 2. 创建cuda目录并安装cuda
 创建自己的`cuda`目录，`cuda-9.0`(不要命名为cuda，因为后面cudnn解压后会有一个cuda重名文件)
@@ -47,7 +47,7 @@ chmod +x cuda_9.0.176_384.81_linux-run
 ```
 安装到自己的`cuda-9.0`目录下
 ```
-./cuda _9.0.176_384.81_linux-run
+./cuda_9.0.176_384.81_linux-run
 ```
 这一步安装时会遇到以下几个问题：
 > Do you accept the previously read EULA? 
